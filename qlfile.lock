@@ -6,3 +6,7 @@
  (:class qlot/source/dist:source-dist
   :initargs (:distribution "http://dist.ultralisp.org/" :%version :latest)
   :version "20240520165500"))
+("staticl" .
+ (:class qlot/source/github:source-github
+  :initargs (:repos "40ants/staticl" :ref nil :branch nil :tag nil)
+  :version "github-43a6dfbafb56ccb4b8b67c5f4a5ec8a67f19ce99"))
