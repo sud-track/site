@@ -3,7 +3,7 @@
 
 ;; This way you can load all required plugins,
 ;; which are not included into the Staticl system:
-(asdf:load-system "staticl/format/spinneret")
+(ql:quickload "staticl/format/spinneret")
 
 (site "Судебные дела"
       :description "Поиск и отслеживание судебных дел"
