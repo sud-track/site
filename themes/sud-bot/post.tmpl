@@ -1,0 +1,41 @@
+{namespace coleslaw.theme.readable}
+
+{template post}
+<div class="flex flex-col max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:py-16 lg:pt-28">{\n}
+  <h1 class="text-2xl">{$content.title}</h1>{\n}
+  {if $content.tags}
+    <div class="text-gray-500">
+        Теги: {foreach $tag in $content.tags}
+          {if $tag.url}<a class="text-blue-500" href="{$tag.url}">{$tag.name}</a>{else}<b>{$tag.name}</b>{/if}{nil}
+            {if not isLast($tag)},{sp}{/if}
+        {/foreach}
+    </div>
+  {/if}
+
+  {if $content.created_at}
+    <div>
+        <span class="text-gray-500">Дата публикации:</span> {$content.created_at | date}
+    </div>
+  {/if}
+
+  <div class="my-8">
+    {$content.html |noAutoescape}
+  </div>
+
+  {if $content.prev or $content.next }
+    <div class="flex justify-center gap-8">
+      {if $content.prev}
+        <a class="text-blue-500" href="{$content.prev.url}" title="{$content.prev.title}">&larr; Предыдущая статья</a>
+      {else}
+        <span class="text-gray-300">&larr; Предыдущая статья</span>
+      {/if}
+      
+      {if $content.next}
+      <a class="text-blue-500" href="{$content.next.url}" title="{$content.next.title}">Следующая статья &rarr;</a>
+      {else}
+      <span class="text-gray-300">Следующая статья &rarr;</span>
+      {/if}
+    </div>
+  {/if}
+</div>{\n}
+{/template}

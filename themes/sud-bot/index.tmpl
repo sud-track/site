@@ -1,0 +1,42 @@
+{namespace coleslaw.theme.readable}
+
+{template index}
+<div class="flex flex-col max-w-screen-xl px-4 pt-20 pb-8 mx-auto gap-8 lg:py-16 lg:pt-28">
+  <h1 class="text-3xl">{$content.title}</h1>
+  {foreach $obj in $content.items}
+    <div class="flex flex-col gap-4">
+      <h2 class="text-2xl"><a href="{$obj.url}">{$obj.title}</a></h2>
+      <p class="text-gray-500">Опубликовано {$obj.created_at | date}</p>
+      {$obj.excerpt |noAutoescape}
+  
+      {if $obj.has_more}<p><a class="text-blue-500" href="{$obj.url}">Читать далее...</a></p>{/if}
+    </div>
+  {/foreach}
+  <div id="relative-nav">
+    <ul class="flex justify-center">
+      {if $content.prev} <li class="previous"><a href="{$content.prev.url}">Предыдущая</a></li> {/if}
+      {if $content.next} <li class="next"><a href="{$content.next.url}">Следующая</a></li> {/if}
+    </ul>
+  </div>
+  {if $content.tags}
+  <div class="">
+    <p>Другие темы
+      {foreach $tag in $content.tags}
+        <a href="{$tag.url}">{$tag.name}</a>{nil}
+        {if not isLast($tag)},{sp}{/if}
+      {/foreach}
+    </p>
+  </div>
+  {/if}
+  {if $months}
+  <div class="row-fluid">
+    <p>Содержимое по месяцам
+      {foreach $month in $content.months}
+        <a href="{$month.url}">{$month.name}</a>{nil}
+        {if not isLast($month)},{sp}{/if}
+      {/foreach}
+    </p>
+  </div>
+  {/if}
+</div>
+{/template}

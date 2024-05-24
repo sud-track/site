@@ -12,9 +12,12 @@
                         (item "About" "/about/"))
       :pipeline (list (load-content)
                       (prev-next-links)
-                      (paginated-index :target-path "blog/")
+                      (paginated-index :target-path "blog/"
+                                       :page-title-fn (lambda (page-number)
+                                                        (format nil "Страница ~A"
+                                                                page-number)))
                       (rss :target-path "blog/rss.xml")
                       (atom :target-path "blog/atom.xml")
                       (tags-index :target-path "tags/")
                       (sitemap))
-      :theme "readable")
+      :theme "sud-bot")
