@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /blog/$
+Disallow: /blog/page-
+Disallow: /tags/
+
+Sitemap: https://sudebnie-dela.ru/sitemap.xml
