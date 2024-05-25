@@ -22,7 +22,7 @@
   <div class="">
     <p>Другие темы
       {foreach $tag in $content.tags}
-        <a href="{$tag.url}">{$tag.name}</a>{nil}
+        <a class="text-blue-500" href="{$tag.url}">{$tag.name}</a>{nil}
         {if not isLast($tag)},{sp}{/if}
       {/foreach}
     </p>
