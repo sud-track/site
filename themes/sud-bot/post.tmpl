@@ -17,6 +17,11 @@
         <span class="text-gray-500" itemprop="datePublished" content="{$content.created_at}">Дата публикации:</span> {$content.created_at | date}
     </div>
   {/if}
+  {if $content.author }
+    <div>
+        <span class="text-gray-500" itemprop="author" content="{$content.author}">Автор:</span> {$content.author}
+    </div>
+  {/if}
 
   <div class="my-8 post-content" itemprop="articleBody">
     {$content.html |noAutoescape}
