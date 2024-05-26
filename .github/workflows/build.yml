@@ -20,6 +20,8 @@ jobs:
         run: 'env | sort -u'
       - name: Install Dependencies
         run: qlot install
+      - name: Install Staticl script
+        run: qlot exec ros install 40ants/staticl
       - name: Build new version of the site
         run: qlot exec .qlot/bin/staticl generate
         env:
