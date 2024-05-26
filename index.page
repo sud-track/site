@@ -1,13 +1,8 @@
 ;;;;;
-title: An index page.
+title: Судебные дела - мировые суды Москвы
+description: Если кто-то подал на вас в суд, то здесь вы можете быстро найти номер дела и подать возражение на судебное решение.
 created-at: 2024-03-30
 format: md
 template: landing
 ;;;;;
 
-This is a front page of example site. The site uses StatiCL generator written in Common Lisp.
-
-Blog posts are available at [/blog/](/blog/). There is also an [/about/](/about/) page.
-
-The blog has an rss feed, and all pages are gathered into a
-single [sitemap.xml](/sitemap.xml) file.

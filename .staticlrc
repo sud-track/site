@@ -5,8 +5,8 @@
 ;; which are not included into the Staticl system:
 (ql:quickload "staticl/format/spinneret")
 
-(site "Судебные дела"
-      :description "Поиск и отслеживание судебных дел"
+(site "Судебные дела - мировые суды Москвы"
+      :description "Если кто-то подал на вас в суд, то здесь вы можете быстро найти номер дела и подать возражение на судебное решение."
       :url "https://sudebnie-dela.ru"
       :navigation (menu (item "Blog" "/blog/")
                         (item "About" "/about/"))

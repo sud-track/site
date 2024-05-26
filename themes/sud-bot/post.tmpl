@@ -1,8 +1,8 @@
 {namespace coleslaw.theme.readable}
 
 {template post}
-<div class="flex flex-col max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:py-16 lg:pt-28">{\n}
-  <h1 class="text-2xl">{$content.title}</h1>{\n}
+<div class="flex flex-col max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:py-16 lg:pt-28" itemscope itemtype="http://schema.org/Article">{\n}
+  <h1 class="text-2xl" itemprop="name">{$content.title}</h1>{\n}
   {if $content.tags}
     <div class="text-gray-500">
         Теги: {foreach $tag in $content.tags}
@@ -14,11 +14,11 @@
 
   {if $content.created_at}
     <div>
-        <span class="text-gray-500">Дата публикации:</span> {$content.created_at | date}
+        <span class="text-gray-500" itemprop="datePublished" content="{$content.created_at}">Дата публикации:</span> {$content.created_at | date}
     </div>
   {/if}
 
-  <div class="my-8 post-content">
+  <div class="my-8 post-content" itemprop="articleBody">
     {$content.html |noAutoescape}
   </div>
 

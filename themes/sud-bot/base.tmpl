@@ -9,21 +9,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Судебные дела - мировые суды Москвы</title>
+    <title>{if $content.title }{$content.title}{else}Судебные дела - мировые суды Москвы{/if}</title>
 
     <!-- Meta SEO -->
-    <meta name="title" content="Судебные дела - мировые суды Москвы">
-    <meta name="description" content="Если кто-то подал на вас в суд, то здесь вы можете быстро найти номер дела и подать возражение на судебное решение.">
+    <meta name="title" content="{if $content.title }{$content.title}{else}Судебные дела - мировые суды Москвы{/if}">
+    <meta name="description" content="{if $content.description }{$content.description}{else}{if $content.excerpt }{$content.excerpt | remove-html-tags | first-line}{else}{$site.description}{/if}{/if}">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Russian">
     <meta name="author" content="40Ants">
 
     <!-- Social media share -->
-    <meta property="og:title" content="Судебные дела - мировые суды Москвы">
+    <meta property="og:title" content="{if $content.title }{$content.title}{else}Судебные дела - мировые суды Москвы{/if}">
     <meta property="og:site_name" content="Судебные дела">
     <meta property="og:url" content="https://sudebnie-dela.ru/">
-    <meta property="og:description" content="Если кто-то подал на вас в суд, то здесь вы можете быстро найти номер дела и подать возражение на судебное решение.">
+    <meta property="og:description" content="{if $content.description }{$content.description}{else}{if $content.excerpt }{$content.excerpt | remove-html-tags | first-line}{else}{$site.description}{/if}{/if}">
     <meta property="og:type" content="">
     <!--meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/og-image.png"-->
     <!--meta name="twitter:card" content="summary" /-->
