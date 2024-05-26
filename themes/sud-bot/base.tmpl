@@ -17,18 +17,33 @@
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Russian">
-    <meta name="author" content="40Ants">
+    {if $content.author}
+    <meta name="author" content="{$content.author}">
+    {/if>
 
     <!-- Social media share -->
-    <meta property="og:title" content="{if $content.title }{$content.title}{else}Судебные дела - мировые суды Москвы{/if}">
+    <meta property="og:title" content="{if $content.title }{$content.title}{else}{$site.title}{/if}">
     <meta property="og:site_name" content="Судебные дела">
     <meta property="og:url" content="https://sudebnie-dela.ru/">
     <meta property="og:description" content="{if $content.description }{$content.description}{else}{if $content.excerpt }{$content.excerpt | remove-html-tags | first-line}{else}{$site.description}{/if}{/if}">
     <meta property="og:type" content="">
+    {if $content.author}
+      <meta property="article:author" content="{$content.author}">
+    {/if>
+    {if $content.tags}
+      {foreach $tag in $content.tags}
+        <meta property="article:tag" content="{$tag.name}" />
+      {/foreach}
+    {/if}
     <!--meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/og-image.png"-->
-    <!--meta name="twitter:card" content="summary" /-->
-    <!--meta name="twitter:site" content="@" /-->
-    <!--meta name="twitter:creator" content="@" /-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{if $content.title }{$content.title}{else}{$site.title}{/if}">
+    <meta name="twitter:description" content="{if $content.description }{$content.description}{else}{if $content.excerpt }{$content.excerpt | remove-html-tags | first-line}{else}{$site.description}{/if}{/if}">
+    <meta name="twitter:site" content="{$site.url}" />
+    <!-- TODO -->
+    <!--meta name="twitter:image:src" content="{$site.url}" /-->
+    <meta name="twitter:creator" content="{$site.url}" />
+    <meta name="twitter:domain" content="{$site.url}" />
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.webp">

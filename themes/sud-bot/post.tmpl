@@ -2,7 +2,7 @@
 
 {template post}
 <div class="flex flex-col max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:py-16 lg:pt-28" itemscope itemtype="http://schema.org/Article">{\n}
-  <h1 class="text-2xl" itemprop="name">{$content.title}</h1>{\n}
+  <h1 class="text-2xl" itemprop="headline">{$content.title}</h1>{\n}
   {if $content.tags}
     <div class="text-gray-500">
         Теги: {foreach $tag in $content.tags}
